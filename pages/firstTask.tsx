@@ -1,15 +1,18 @@
 import React from "react";
 import Layout from "../components/Layout";
+import PowerfullBar from "../components/PowerfullBar";
 import SimpleBar from "../components/SimpleBar";
-import { interceptionData } from "../utils/logic";
+import { interceptionData, medianData } from "../utils/logic";
 
 
-export default function FirstTask({ lowHightCharts }:any) {
+export default function FirstTask({ lowHightCharts, medianCharts }: any) {
+  console.log(medianCharts)
   return (
     <Layout>
       <div className="w-1/2 text-center">
         <h2>Bar Example (custom size)</h2>
         <SimpleBar lowHightCharts={lowHightCharts} />
+        <PowerfullBar medianCharts={medianCharts} />
       </div>
     </Layout>
   );
@@ -18,9 +21,10 @@ export default function FirstTask({ lowHightCharts }:any) {
 export async function getServerSideProps() {
   const res = await fetch("http://localhost:3000/api/data");
   const answers = await res.json();
-
+  const medianCharts = medianData(answers)
+  console.log(`median ${medianCharts}`)
   const lowHightCharts = interceptionData(answers);
   return {
-    props: { lowHightCharts},
+    props: { lowHightCharts, medianCharts},
   };
 }

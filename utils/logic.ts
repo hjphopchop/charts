@@ -38,3 +38,17 @@ export const interceptionData = (obj: Array<GenerateDate>) => {
    });
    return array;
  };
+
+ export const medianData = (arr: Array<GenerateDate>) => {
+    const obj:any = {}
+    arr.map((item) => {
+        obj[item.name] = []
+        item.answers.map((x) => {
+            if(x.type === 0) {
+                obj[item.name].push(x.median);
+            }
+            console.log(`1 ${obj}`)
+        })
+    })
+    return obj;
+ };
