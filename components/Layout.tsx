@@ -18,10 +18,10 @@ export default function Layout({children}:LayoutProps) {
         <Link href="/">
           <a>общая информация</a>
         </Link>
-        <Link href="/">
+        <Link href="/firstTask">
           <a>задача 1</a>
         </Link>
-        <Link href="/">
+        <Link href="/secondTask">
           <a>задача 2</a>
         </Link>
       </header>

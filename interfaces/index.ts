@@ -1,11 +1,11 @@
-export interface Data {
+export type GenerateDate = {
     id: string
     personal_id: string
     name: string
     answers:answers[]
 }
 
-interface answers {
+  type answers = {
     id:string;
     name: string;
     type: number;
