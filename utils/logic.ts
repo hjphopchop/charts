@@ -1,10 +1,16 @@
 import { GenerateDate } from "../interfaces";
 
-export const interceptionData = (obj: Array<GenerateDate>) => {
+export const interceptionData = (obj: Array<GenerateDate>, type:number) => {
   const lowHigh: Array<any> = [];
   obj.map((item) => {
     item.answers.map((item) => {
       if (item.type === 0) {
+        lowHigh.push((item.low + item.high) / 2);
+      }
+      else if (item.type === 1) {
+        lowHigh.push((item.low + item.high) / 2);
+      }
+      else{
         lowHigh.push((item.low + item.high) / 2);
       }
     });
