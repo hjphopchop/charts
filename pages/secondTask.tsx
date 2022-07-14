@@ -20,7 +20,7 @@ export default function FirstTask({ lowHightCharts, medianCharts }: any) {
 export async function getServerSideProps() {
   const res = await fetch("http://localhost:3000/api/data");
   const answers = await res.json();
-  const medianCharts = medianData(answers);
+  const medianCharts = medianData(answers,1);
   console.log(`median ${medianCharts}`);
   const lowHightCharts = interceptionData(answers, 1);
   return {

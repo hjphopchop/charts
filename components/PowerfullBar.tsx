@@ -56,16 +56,21 @@ export default function PowerfullBar({ medianCharts }: any) {
   const names = Object.keys(medianCharts);
 
   const data = {
-    labels: names,
-
+    labels: [],
     datasets: [],
   };
+  let fullDataset: any = [];
   names.map((item) => {
-    {
-      for (let i = 0; i <= medianCharts[item].length; i++) {
-        data.datasets.push({ data: medianCharts[item] });
-      }
+    for (let i = 0; i < medianCharts[item].length; i++) {
+      data.labels.push(item);
     }
+    fullDataset = fullDataset.concat(medianCharts[item]);
   });
+  console.log(fullDataset);
+  data.datasets.push({ data: fullDataset });
+
+  console.log(medianCharts);
+  console.log(data);
+
   return <Bar data={data} options={options} />;
 }
