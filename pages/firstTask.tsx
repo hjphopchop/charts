@@ -23,7 +23,7 @@ export async function getServerSideProps() {
   const answers = await res.json();
   const medianCharts = medianData(answers)
   console.log(`median ${medianCharts}`)
-  const lowHightCharts = interceptionData(answers);
+  const lowHightCharts = interceptionData(answers,0);
   return {
     props: { lowHightCharts, medianCharts},
   };

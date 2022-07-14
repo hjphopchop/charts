@@ -4,13 +4,7 @@ export const interceptionData = (obj: Array<GenerateDate>, type:number) => {
   const lowHigh: Array<any> = [];
   obj.map((item) => {
     item.answers.map((item) => {
-      if (item.type === 0) {
-        lowHigh.push((item.low + item.high) / 2);
-      }
-      else if (item.type === 1) {
-        lowHigh.push((item.low + item.high) / 2);
-      }
-      else{
+      if (item.type === type) {
         lowHigh.push((item.low + item.high) / 2);
       }
     });
@@ -45,12 +39,12 @@ export const interceptionData = (obj: Array<GenerateDate>, type:number) => {
    return array;
  };
 
- export const medianData = (arr: Array<GenerateDate>) => {
+ export const medianData = (arr: Array<GenerateDate>, type:number) => {
     const obj:any = {}
     arr.map((item) => {
         obj[item.name] = []
         item.answers.map((x) => {
-            if(x.type === 0) {
+            if(x.type === type) {
                 obj[item.name].push(x.median);
             }
             console.log(`1 ${obj}`)
