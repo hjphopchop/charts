@@ -9,9 +9,8 @@ import { interceptionData, medianData } from '../utils/logic'
 export default function Home({lowHightCharts, medianCharts}) {
   return (
     <Layout>
-      <div className="w-1/2 text-center">
-        <h2>Bar Example (custom size)</h2>
-        <SimpleBar lowHightCharts={lowHightCharts} />
+      <div className="container mx-auto py-10 px-10">
+        <SimpleBar  lowHightCharts={lowHightCharts} />
         <PowerfullBar medianCharts={medianCharts} />
       </div>
     </Layout>

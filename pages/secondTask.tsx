@@ -8,10 +8,9 @@ export default function FirstTask({ lowHightCharts, medianCharts }: any) {
   console.log(medianCharts);
   return (
     <Layout>
-      <div className="w-1/2 text-center">
-        <h2>Bar Example (custom size)</h2>
-        <SimpleBar lowHightCharts={lowHightCharts} />
-        <PowerfullBar medianCharts={medianCharts} />
+      <div className="container mx-auto py-10 px-10">
+        <SimpleBar className="my-10" lowHightCharts={lowHightCharts} />
+        <PowerfullBar className="my-10" medianCharts={medianCharts} />
       </div>
     </Layout>
   );

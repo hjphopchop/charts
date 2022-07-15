@@ -24,6 +24,8 @@ ChartJS.register(
 );
 
 const options = {
+  
+  responsive:true,
   plugins: {
     legend: {
       display: false,
@@ -32,7 +34,7 @@ const options = {
   elements: {
     line: {
       tension: 0,
-      borderWidth: 2,
+      borderWidth: 1,
       borderColor: "rgba(47,97,68,1)",
       fill: "start",
       backgroundColor: "rgba(47,47,68,0.3)",
@@ -52,14 +54,15 @@ const options = {
   },
 };
 
-export default function SimpleBar({ lowHightCharts }: any) {
+export default function SimpleBar({ lowHightCharts }:any) {
   const data = {
     labels: ["0-2", "2-4", "4-6", "6-8", "8-10"],
     datasets: [
       {
         data: lowHightCharts,
+        backgroundColor: "rgb(46, 147, 242)",
       },
     ],
   };
-  return <Bar data={data} options={options} />;
+  return <Bar className="my-5 w-1/2" data={data} height={"1vh"} width={'5vw'} options={options} />;
 }

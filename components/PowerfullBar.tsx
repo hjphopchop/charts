@@ -33,9 +33,9 @@ const options = {
     line: {
       tension: 0,
       borderWidth: 2,
-      borderColor: "rgba(47,97,68,1)",
+      borderColor: "rgba(0, 0, 0,0.7)",
       fill: "start",
-      backgroundColor: "rgba(47,47,68,0.3)",
+      backgroundColor: "rgba(0,47,97,0.6)",
     },
     point: {
       radius: 0,
@@ -54,8 +54,7 @@ const options = {
 
 export default function PowerfullBar({ medianCharts }: any) {
   const names = Object.keys(medianCharts);
-
-  const data = {
+  const data:any = {
     labels: [],
     datasets: [],
   };
@@ -66,11 +65,21 @@ export default function PowerfullBar({ medianCharts }: any) {
     }
     fullDataset = fullDataset.concat(medianCharts[item]);
   });
-  console.log(fullDataset);
-  data.datasets.push({ data: fullDataset });
+  data.datasets.push({
+    data: fullDataset,
+    backgroundColor: "rgb(230, 80, 80)",
+  });
 
   console.log(medianCharts);
   console.log(data);
 
-  return <Bar data={data} options={options} />;
+  return (
+    <Bar
+      className="my-10"
+      data={data}
+      height={"1vh"}
+      width={"5vw"}
+      options={options}
+    />
+  );
 }
