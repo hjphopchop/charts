@@ -2,15 +2,23 @@ import React from "react";
 import Layout from "../components/Layout";
 import PowerfullBar from "../components/PowerfullBar";
 import SimpleBar from "../components/SimpleBar";
+import { MedianCharts } from "../interfaces";
 import { interceptionData, medianData } from "../utils/logic";
 
-export default function FirstTask({ lowHightCharts, medianCharts }: any) {
-  console.log(medianCharts);
+interface FirstTaskProps {
+  lowHightCharts: Array<number>;
+  medianCharts: MedianCharts;
+}
+
+export default function FirstTask({
+  lowHightCharts,
+  medianCharts,
+}: FirstTaskProps) {
   return (
     <Layout>
       <div className="container mx-auto py-10 px-10">
-        <SimpleBar className="my-10" lowHightCharts={lowHightCharts} />
-        <PowerfullBar className="my-10" medianCharts={medianCharts} />
+        <SimpleBar lowHightCharts={lowHightCharts} />
+        <PowerfullBar medianCharts={medianCharts} />
       </div>
     </Layout>
   );

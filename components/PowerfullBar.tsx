@@ -11,6 +11,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { MedianCharts } from "../interfaces";
 
 ChartJS.register(
   CategoryScale,
@@ -51,15 +52,18 @@ const options = {
     },
   },
 };
+export interface PowerfullBarProps {
+  medianCharts: MedianCharts;
+}
 
-export default function PowerfullBar({ medianCharts }: any) {
+export default function PowerfullBar({ medianCharts }: PowerfullBarProps) {
   const names = Object.keys(medianCharts);
   const data: any = {
     labels: [],
     datasets: [],
   };
-  let fullDataset: Array<any> = [];
-  names.map((item: any) => {
+  let fullDataset: Array<number> = [];
+  names.map((item: string) => {
     for (let i = 0; i < medianCharts[item].length; i++) {
       data.labels.push(item);
     }
@@ -70,7 +74,7 @@ export default function PowerfullBar({ medianCharts }: any) {
     backgroundColor: "rgb(230, 80, 80)",
   });
 
-  console.log(medianCharts);
+  console.log(fullDataset);
 
   return (
     <Bar

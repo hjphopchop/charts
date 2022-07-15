@@ -13,3 +13,7 @@ type answers = {
   high: number;
   median: number;
 };
+
+export type MedianCharts = {
+  [name: string]: number[];
+};

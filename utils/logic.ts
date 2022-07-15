@@ -1,7 +1,7 @@
-import { GenerateDate } from "../interfaces";
+import { GenerateDate, MedianCharts } from "../interfaces";
 
 export const interceptionData = (obj: Array<GenerateDate>, type: number) => {
-  const lowHigh: Array<any> = [];
+  const lowHigh: Array<number> = [];
   obj.map((item) => {
     item.answers.map((item) => {
       if (item.type === type) {
@@ -42,7 +42,7 @@ const formationData = (arr: Array<number>) => {
 };
 
 export const medianData = (arr: Array<GenerateDate>, type: number) => {
-  const obj: any = {};
+  const obj: MedianCharts = {};
   arr.map((item) => {
     obj[item.name] = [];
     item.answers.map((x) => {

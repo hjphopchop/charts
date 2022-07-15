@@ -2,10 +2,15 @@ import type { NextPage } from "next";
 import Layout from "../components/Layout";
 import PowerfullBar from "../components/PowerfullBar";
 import SimpleBar from "../components/SimpleBar";
+import { MedianCharts } from "../interfaces";
 
 import { interceptionData, medianData } from "../utils/logic";
 
-export default function Home({ lowHightCharts, medianCharts }: any) {
+interface HomeProps {
+  lowHightCharts: Array<number>;
+  medianCharts: MedianCharts;
+}
+export default function Home({ lowHightCharts, medianCharts }: HomeProps) {
   return (
     <Layout>
       <div className="container mx-auto py-10 px-10">

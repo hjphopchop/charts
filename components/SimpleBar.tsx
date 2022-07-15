@@ -52,8 +52,10 @@ const options = {
     },
   },
 };
-
-export default function SimpleBar({ lowHightCharts }: any) {
+interface SimplebarProps {
+  lowHightCharts: Array<number>;
+}
+export default function SimpleBar({ lowHightCharts }: SimplebarProps) {
   const data = {
     labels: ["0-2", "2-4", "4-6", "6-8", "8-10"],
     datasets: [
@@ -65,7 +67,7 @@ export default function SimpleBar({ lowHightCharts }: any) {
   };
   return (
     <Bar
-      className="my-5 w-1/2"
+      className="my-5"
       data={data}
       height={"1vh"}
       width={"5vw"}
