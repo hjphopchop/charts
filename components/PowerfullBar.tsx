@@ -54,12 +54,12 @@ const options = {
 
 export default function PowerfullBar({ medianCharts }: any) {
   const names = Object.keys(medianCharts);
-  const data:any = {
+  const data: any = {
     labels: [],
     datasets: [],
   };
-  let fullDataset: any = [];
-  names.map((item) => {
+  let fullDataset: Array<any> = [];
+  names.map((item: any) => {
     for (let i = 0; i < medianCharts[item].length; i++) {
       data.labels.push(item);
     }
@@ -71,7 +71,6 @@ export default function PowerfullBar({ medianCharts }: any) {
   });
 
   console.log(medianCharts);
-  console.log(data);
 
   return (
     <Bar

@@ -5,7 +5,6 @@ import SimpleBar from "../components/SimpleBar";
 import { interceptionData, medianData } from "../utils/logic";
 
 export default function FirstTask({ lowHightCharts, medianCharts }: any) {
-  console.log(medianCharts);
   return (
     <Layout>
       <div className="container mx-auto py-10 px-10">

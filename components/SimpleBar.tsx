@@ -24,8 +24,7 @@ ChartJS.register(
 );
 
 const options = {
-  
-  responsive:true,
+  responsive: true,
   plugins: {
     legend: {
       display: false,
@@ -54,7 +53,7 @@ const options = {
   },
 };
 
-export default function SimpleBar({ lowHightCharts }:any) {
+export default function SimpleBar({ lowHightCharts }: any) {
   const data = {
     labels: ["0-2", "2-4", "4-6", "6-8", "8-10"],
     datasets: [
@@ -64,5 +63,13 @@ export default function SimpleBar({ lowHightCharts }:any) {
       },
     ],
   };
-  return <Bar className="my-5 w-1/2" data={data} height={"1vh"} width={'5vw'} options={options} />;
+  return (
+    <Bar
+      className="my-5 w-1/2"
+      data={data}
+      height={"1vh"}
+      width={"5vw"}
+      options={options}
+    />
+  );
 }
