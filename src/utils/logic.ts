@@ -1,4 +1,4 @@
-import { GenerateDate, MedianCharts } from "../interfaces";
+import { GenerateDate, MedianCharts } from "../types";
 
 export const interceptionData = (obj: Array<GenerateDate>, type: number) => {
   const lowHigh: Array<number> = [];

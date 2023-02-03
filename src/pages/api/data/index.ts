@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { data } from "../../../data";
-import { GenerateDate } from "../../../interfaces";
+;
+import { GenerateDate } from "src/types";
+import { data } from "src/data/testData";
 
 export default function handler(
   _req: NextApiRequest,

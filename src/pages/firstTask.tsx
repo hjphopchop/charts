@@ -1,9 +1,9 @@
 import React from "react";
-import Layout from "../components/Layout";
-import PowerfullBar from "../components/PowerfullBar";
-import SimpleBar from "../components/SimpleBar";
-import { MedianCharts } from "../interfaces";
-import { interceptionData, medianData } from "../utils/logic";
+import Layout from "src/layout/Layout";
+import {PowerfullBar} from "src/components/PowerfullBar";
+import {SimpleBar} from "src/components/SimpleBar";
+import { MedianCharts } from "src/types";
+import { interceptionData, medianData } from "src/utils/logic";
 
 interface FirstTaskProps {
   lowHightCharts: Array<number>;
