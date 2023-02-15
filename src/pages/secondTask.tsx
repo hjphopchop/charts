@@ -5,6 +5,7 @@ import {SimpleBar} from "src/components/SimpleBar"
 import { MedianCharts } from "src/types";
 import { interceptionData, medianData } from "src/utils/logic";
 
+const test = '';
 interface FirstTaskProps {
   lowHightCharts: Array<number>;
   medianCharts: MedianCharts;
